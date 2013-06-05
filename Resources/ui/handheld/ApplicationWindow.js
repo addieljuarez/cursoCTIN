@@ -26,6 +26,30 @@ function ApplicationWindow() {
 	
 	
 	
+	var textField1 = Titanium.UI.createTextField({
+		backgroundColor:'pink',
+		height:30,
+		width:200,
+		hintText:'nombre',
+		borderRadius:5,
+		borderColor:'red',
+		borderWidth:2,
+		top:5,
+	});
+	
+	var textField2 = Titanium.UI.createTextField({
+		backgroundColor:'pink',
+		height:30,
+		width:200,
+		hintText:'password',
+		borderRadius:5,
+		borderColor:'red',
+		borderWidth:2,
+		top :50,
+		passwordMask:true,
+	});
+	
+	contendorI.add(textField1, textField2);
 	
 	self.add(contendorI);
 	self.add(contenedorBoton);

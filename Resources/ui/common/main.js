@@ -22,7 +22,7 @@ function Main (){
 	});
 	
 	var boton3 = Titanium.UI.createButton({
-		//title:'webView',
+		title:'JSON',
 		top:90,
 		width:150,
 		height:30,

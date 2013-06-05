@@ -3,6 +3,8 @@ function JSON1 (){
 		backgroundColor:'red',
 	});
 	
+	var Info1 = require('ui/common/info');
+	
 	var table = Titanium.UI.createTableView({
 		top:0,
 		bottom:40,
@@ -11,7 +13,7 @@ function JSON1 (){
 	
 	//-----------------------------------------------------------------------------
 	
-	var url = 'https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=twitterapi&count=5'
+	var url = 'https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=twitterapi&count=20'
 	var tableData = [];
 	
 	var xhr = Titanium.Network.createHTTPClient({
@@ -28,6 +30,7 @@ function JSON1 (){
 					width:'100%',
 					height:Titanium.UI.SIZE,
 					layout:'vertical',
+					id:interno.id,
 				});
 				
 				var imagen = Titanium.UI.createImageView({
@@ -65,6 +68,17 @@ function JSON1 (){
 	
 	
 	//---------------------------------------------------------------------------------------
+	
+	
+	table.addEventListener('click', function(e){
+		
+		var prueba = e.rowData.id;
+		
+		alert(prueba);
+		var info1 = new Info1();
+		self.add(info1);
+		Titanium.App.Properties.setInt('id', prueba);
+	});
 	
 	
 	return self;

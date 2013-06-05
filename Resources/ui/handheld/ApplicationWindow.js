@@ -152,6 +152,27 @@ function ApplicationWindow() {
 	});
 	
 	
+	textField3.addEventListener('focus', function(){
+		//self.top = -150;
+		
+		var firstMove = Ti.UI.createAnimation({duration:500, top:-150,});
+		
+		self.animate(firstMove);
+		
+		
+	});
+	
+	textField3.addEventListener('blur', function(){
+		//self.top =0;
+		var regreso = Titanium.UI.createAnimation({
+			duration:500,
+			top:0,
+		});
+		self.animate(regreso)
+	})
+	
+	
+	
 	return self;
 }
 

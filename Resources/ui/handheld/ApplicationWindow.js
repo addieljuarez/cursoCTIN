@@ -1,6 +1,7 @@
 
 function ApplicationWindow() {
 	
+	var Main = require('ui/common/main');
 	var self = Titanium.UI.createWindow({
 		backgroundColor:'red',
 		height:'100%',
@@ -126,6 +127,16 @@ function ApplicationWindow() {
 	contenedorRegistro.add(botonRegistro);
 	//-----------------------------------------------------------------------
 	
+	var ventana2 = (function(){
+		var self = Titanium.UI.createWindow({
+			backgroundColor:'#fff',
+		});
+		
+		return self;
+	})()
+	
+	
+	
 	textField1.addEventListener('return', function(){
 		textField2.focus();
 	});
@@ -138,12 +149,15 @@ function ApplicationWindow() {
 		
 		textField2.blur();
 		textField1.blur();
-		alert('bienvenido');
+		//alert('bienvenido');
+		var main = new Main();
+		main.open();
 	});
 	
 	registro.addEventListener('click', function(){
 		textField2.blur();
 		textField1.blur();
+		ventana2.open()
 	});
 	
 	self.addEventListener('click', function(){
@@ -170,6 +184,8 @@ function ApplicationWindow() {
 		});
 		self.animate(regreso)
 	})
+	
+	
 	
 	
 	

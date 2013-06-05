@@ -77,7 +77,53 @@ function ApplicationWindow() {
 	self.add(contenedorBoton);
 	
 	
+	var contenedorRegistro =  Titanium.UI.createView({
+		backgroundColor:'#000',
+		top:20,
+		height:150,
+		width:250,
+	});
 	
+	self.add(contenedorRegistro);
+	
+	
+	var textField3 = Titanium.UI.createTextField({
+		backgroundColor:'pink',
+		height:30,
+		width:200,
+		hintText:'nombre',
+		borderRadius:5,
+		borderColor:'red',
+		borderWidth:2,
+		top:5,
+		keyboardType: Ti.UI.KEYBOARD_EMAIL,
+		returnKeyType:Titanium.UI.RETURNKEY_NEXT
+	});
+	
+	var textField4 = Titanium.UI.createTextField({
+		backgroundColor:'pink',
+		height:'30dp',
+		width:200,
+		hintText:'password',
+		borderRadius:5,
+		borderColor:'red',
+		borderWidth:2,
+		top :50,
+		passwordMask:true,
+		returnKeyType:Titanium.UI.RETURNKEY_DONE,
+	});
+	
+	var botonRegistro = Titanium.UI.createButton({
+		top:90,
+		height:30,
+		width:150,
+		title:'registrate',
+	});
+	
+	
+	contenedorRegistro.add(textField3);
+	contenedorRegistro.add(textField4);
+	contenedorRegistro.add(botonRegistro);
 	//-----------------------------------------------------------------------
 	
 	textField1.addEventListener('return', function(){
@@ -99,6 +145,12 @@ function ApplicationWindow() {
 		textField2.blur();
 		textField1.blur();
 	});
+	
+	self.addEventListener('click', function(){
+		textField2.blur();
+		textField1.blur();
+	});
+	
 	
 	return self;
 }

@@ -6,6 +6,7 @@ function Main (){
 	
 	var WebView = require('ui/common/webView');
 	var Imagen = require('ui/common/imagen');
+	var JSON = require('ui/common/JSON');
 	 
 	var boton1 = Titanium.UI.createButton({
 		title:'webView',
@@ -55,6 +56,10 @@ function Main (){
 		self.add(imagen);
 	});
 	
+	boton3.addEventListener('click', function(){
+		var Json = new JSON();
+		self.add(Json); 
+	});
 	
 	return self;
 }

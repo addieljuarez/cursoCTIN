@@ -4,6 +4,8 @@ function Main (){
 		
 	});
 	
+	var WebView = require('ui/common/webView');
+	 
 	var boton1 = Titanium.UI.createButton({
 		title:'webView',
 		top:10,
@@ -36,6 +38,12 @@ function Main (){
 	self.add(boton2);
 	self.add(boton3);
 	self.add(boton4);
+	
+	boton1.addEventListener('click', function(){
+		var webView = new WebView();
+		self.add(webView);
+	});
+	
 	
 	return self;
 }

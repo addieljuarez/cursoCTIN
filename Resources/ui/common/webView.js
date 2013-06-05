@@ -33,6 +33,9 @@ function WebView(){
 		title:'salir',
 	})
 	
+	salir.addEventListener('click', function(){
+		Titanium.App.fireEvent('cerrarWebView');
+	});
 	
 	
 	self.add(salir);

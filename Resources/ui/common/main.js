@@ -5,6 +5,7 @@ function Main (){
 	});
 	
 	var WebView = require('ui/common/webView');
+	var Imagen = require('ui/common/imagen');
 	 
 	var boton1 = Titanium.UI.createButton({
 		title:'webView',
@@ -14,7 +15,7 @@ function Main (){
 	});
 	
 	var boton2 = Titanium.UI.createButton({
-		//title:'webView',
+		title:'imagen',
 		top:50,
 		width:150,
 		height:30,
@@ -42,6 +43,16 @@ function Main (){
 	boton1.addEventListener('click', function(){
 		var webView = new WebView();
 		self.add(webView);
+		
+		Titanium.App.addEventListener('cerrarWebView', function(){
+			self.remove(webView);
+		});
+	});
+	
+	
+	boton2.addEventListener('click', function(){
+		var imagen = new Imagen();
+		self.add(imagen);
 	});
 	
 	

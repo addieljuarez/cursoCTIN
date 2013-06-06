@@ -5,7 +5,7 @@ function SHARED (){
 	
 	
 	 var fb = require('facebook');
-	
+	 fb.appid = 'aqui tu appId';
 	 fb.permissions = ['email, user_birthday, user_hometown, user_location, publish_actions, publish_stream, publish_checkins, user_photos'];
 	 // fb.forceDialogAuth = true;
 	 // fb.addEventListener('login', function(e) {

@@ -8,6 +8,8 @@ function Main (){
 	var Imagen = require('ui/common/imagen');
 	var JSON = require('ui/common/JSON');
 	var Mapa = require('ui/common/mapa');
+	
+	var Shared = require('ui/common/shared');
 	 
 	var boton1 = Titanium.UI.createButton({
 		title:'webView',
@@ -37,10 +39,18 @@ function Main (){
 		height:30,
 	});
 	
+	var boton5 = Titanium.UI.createButton({
+		title:'shared',
+		top:170,
+		width:150,
+		height:30,
+	});
+	
 	self.add(boton1);
 	self.add(boton2);
 	self.add(boton3);
 	self.add(boton4);
+	self.add(boton5);
 	
 	boton1.addEventListener('click', function(){
 		var webView = new WebView();
@@ -67,7 +77,10 @@ function Main (){
 		self.add(mapa);
 	});
 	
-	
+	boton5.addEventListener('click', function(){
+		var shared = new Shared();
+		self.add(shared);
+	});
 	
 	
 	return self;

@@ -31,7 +31,7 @@ function SHARED (){
 		        
 		        self.add(nombre);
 		        
-		        alert(json)
+		        //alert(json)
 		    } else if (e.error) {
 		        alert(e.error);
 		    } else {
@@ -39,6 +39,38 @@ function SHARED (){
 		    }
 		});
 		
+		// var email = Titanium.UI.createEmailDialog({
+			// subject:'prueba',
+			// messageBody:' test  test  test  test  test  test  test  test  test  test  test  test  test  test  test  test  test  test  test  test  test  test '
+// 			
+		// })
+		
+		
+		var email = Titanium.UI.createEmailDialog({
+			subject:'prueba',
+			//messageBody:' test  test  test  test  test  test  test  test  test  test  test  test  test  test  test  test  test  test  test  test  test  test ',
+			html:true,
+			messageBody:'<!DOCTYPE HTML><html><body><h1>titulo</h1><img src="http://hosterblog.com/wp-content/uploads/2011/09/appcelerator.png" height=200  width=310 /></body></html>',
+			// toRecipients:'test@test.com
+			toRecipients:['test@test.com'],
+		})
+		
+		var boton = Titanium.UI.createButton({
+			top:30,
+			height:30,
+			width:150,
+			title:'email',
+		});
+		
+		
+		boton.addEventListener('click', function(e){
+			email.open();
+		})
+		
+		
+		
+		
+		self.add(boton);
 		
 	
 	return self;

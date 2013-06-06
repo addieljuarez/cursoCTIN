@@ -7,6 +7,7 @@ function Main (){
 	var WebView = require('ui/common/webView');
 	var Imagen = require('ui/common/imagen');
 	var JSON = require('ui/common/JSON');
+	var Mapa = require('ui/common/mapa');
 	 
 	var boton1 = Titanium.UI.createButton({
 		title:'webView',
@@ -30,7 +31,7 @@ function Main (){
 	});
 	
 	var boton4 = Titanium.UI.createButton({
-		//title:'webView',
+		title:'mapa',
 		top:130,
 		width:150,
 		height:30,
@@ -60,6 +61,14 @@ function Main (){
 		var Json = new JSON();
 		self.add(Json); 
 	});
+	
+	boton4.addEventListener('click', function(){
+		var mapa = new Mapa();
+		self.add(mapa);
+	});
+	
+	
+	
 	
 	return self;
 }
